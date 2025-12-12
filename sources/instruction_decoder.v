@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 module instruction_decoder(
-    input wire [2:0] id,             // <--- NEW 3-bit ID
+    input wire [2:0] id,             
     input wire [4:0] instr_in,
     input wire cc_in,
     input wire instr_en,
