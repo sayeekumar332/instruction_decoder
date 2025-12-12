@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 module instruction_decoder_2(
-    input wire [2:0] id,             
+    input wire [2:0] id,            
     input wire [4:0] instr_in,
     input wire cc_in,
     input wire instr_en,
@@ -21,6 +21,22 @@ module instruction_decoder_2(
     output reg out_ce
 );
 always @(*) begin : instruction_decoder
+
+    rst         = 1'b0;
+    out_ce      = 1'b0;
+    rsel        = 1'b0; 
+    rce         = 1'b0; 
+    cen         = 1'b0; 
+    stack_re    = 1'b0; 
+    pop         = 1'b0;
+    a_mux_sel   = 2'b10;
+    b_mux_sel   = 2'b10;
+    oen         = 1'b0; 
+    pc_mux_sel  = 1'b0; 
+    inc         = 1'b0; 
+    src_sel     = 1'b0;
+    push        = 1'b0;
+    stack_we    = 1'b0; 
     // --------------------------------------
     // If ID != 010 → decoder is disabled
     // --------------------------------------
