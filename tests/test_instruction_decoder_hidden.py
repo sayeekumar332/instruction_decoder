@@ -9,9 +9,10 @@ from cocotb_tools.runner import get_runner
 # GLOBAL HELPER (visible to all testcases)
 # -------------------------------------------------------
 def safe(value):
-    if not value.is_resolvable:
-        raise AssertionError(f"X/Z detected on {value._name}")
-    return value.integer
+    try:
+        return int(value)
+    except ValueError:
+        raise AssertionError(f"X/Z detected on signal {value}")
 
 # ---- Golden output helper ----
 def expect(dut, expected):
