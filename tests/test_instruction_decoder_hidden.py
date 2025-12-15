@@ -9,9 +9,9 @@ from cocotb_tools.runner import get_runner
 # GLOBAL HELPER (visible to all testcases)
 # -------------------------------------------------------
 def safe(value):
-    raw = value.binstr
-    fixed = "".join("0" if c.lower() in ('x','z') else c for c in raw)
-    return int(fixed, 2)
+    if not value.is_resolvable:
+        raise AssertionError(f"X/Z detected on {value._name}")
+    return value.integer
 
 # ---- Golden output helper ----
 def expect(dut, expected):
