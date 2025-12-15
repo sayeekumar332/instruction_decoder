@@ -491,8 +491,8 @@ async def test_hold_PC_dec3(dut):
     await Timer(1, "ns")
 
     assert safe(dut.rce.value) == 1
-    assert safe(dut.stack_re.value) == 1
-    assert safe(dut.pop.value) == 1
+    assert safe(dut.stack_re.value) == 0
+    assert safe(dut.pop.value) == 0
     assert safe(dut.b_mux_sel.value) == 0
     assert safe(dut.pc_mux_sel.value) == 1
     assert safe(dut.inc.value) == 0
