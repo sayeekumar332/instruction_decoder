@@ -116,8 +116,8 @@ always @(*) begin : instruction_decoder
      7'b01010x0 : begin  // Load R
                      rst         = 1'b0;
                      out_ce      = 1'b0;
-                     rsel        = 1'b1;
-                     rce         = 1'b0;
+                     rsel        = 1'b0;
+                     rce         = 1'b1;
                      cen         = 1'b0; 
                      stack_re    = 1'b0;  
                      pop         = 1'b0;
