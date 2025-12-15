@@ -299,7 +299,7 @@ async def test_fetch_PC_to_R_dec2(dut):
 
     assert safe(dut.out_ce.value) == 1
     assert safe(dut.rsel.value) == 1
-    assert safe(dut.rce.value) == 0
+    assert safe(dut.rce.value) == 1
     assert safe(dut.a_mux_sel.value) == 2
     assert safe(dut.b_mux_sel.value) == 0
     assert safe(dut.oen.value) == 1
@@ -320,6 +320,7 @@ async def test_fetch_R_D_to_R_dec2(dut):
     await Timer(1, "ns")
 
     assert safe(dut.cen.value) == 1
+    assert safe(dut.rsel.value) == 1
     assert safe(dut.rce.value) == 1
     assert safe(dut.a_mux_sel.value) == 0
     assert safe(dut.b_mux_sel.value) == 3
