@@ -125,6 +125,127 @@ async def test_instruction_decoder_0(dut):
     ))
 
     cocotb.log.info("Directed test for instruction_decoder_0 PASSED!")
+    
+@cocotb.test()
+async def test_invalid_id_1_dec0(dut):
+    dut.id.value = 1
+    dut.instr_in.value = 0b00001  # valid decoder_0 opcode
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_2_dec0(dut):
+    dut.id.value = 2
+    dut.instr_in.value = 0b00001
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+
+@cocotb.test()
+async def test_invalid_id_3_dec0(dut):
+    dut.id.value = 3
+    dut.instr_in.value = 0b00001
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_4_dec0(dut):
+    dut.id.value = 4
+    dut.instr_in.value = 0b00001
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_5_dec0(dut):
+    dut.id.value = 5
+    dut.instr_in.value = 0b00001
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_6_dec0(dut):
+    dut.id.value = 6
+    dut.instr_in.value = 0b00001
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_7_dec0(dut):
+    dut.id.value = 7
+    dut.instr_in.value = 0b00001
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
 
 # ===============================================================
 #  INSTRUCTION DECODER 1 — DIRECTED TESTCASES
@@ -256,6 +377,125 @@ async def test_default_dec1(dut):
     cocotb.log.info("Decoder 1 — DEFAULT case passed")
 
 
+@cocotb.test()
+async def test_invalid_id_0_dec1(dut):
+    dut.id.value = 0
+    dut.instr_in.value = 0b00100  # valid decoder_1 opcode
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+
+@cocotb.test()
+async def test_invalid_id_2_dec1(dut):
+    dut.id.value = 2
+    dut.instr_in.value = 0b00100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_3_dec1(dut):
+    dut.id.value = 3
+    dut.instr_in.value = 0b00100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_4_dec1(dut):
+    dut.id.value = 4
+    dut.instr_in.value = 0b00100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_5_dec1(dut):
+    dut.id.value = 5
+    dut.instr_in.value = 0b00100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_6_dec1(dut):
+    dut.id.value = 6
+    dut.instr_in.value = 0b00100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_7_dec1(dut):
+    dut.id.value = 7
+    dut.instr_in.value = 0b00100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
 
 
 # ===============================================================
@@ -285,11 +525,18 @@ async def test_instruction_disable_dec2(dut):
     assert safe(dut.pc_mux_sel.value) == 0
     assert safe(dut.inc.value) == 0
     cocotb.log.info("Decoder 2 — Instruction Disable case passed")
+    
 
-
+async def reset_decode(dut):
+    dut.id.value       = 0
+    dut.instr_in.value = 0
+    dut.cc_in.value    = 0
+    dut.instr_en.value = 1   # instruction disabled
+    await Timer(1, "ns")
+    
 @cocotb.test()
 async def test_fetch_PC_to_R_dec2(dut):
-    """Decoder 2: 7'b01000x0 → Fetch PC --> R"""
+    
     dut.id.value = 2
     dut.instr_in.value = 0b01000
     dut.cc_in.value = 0
@@ -306,7 +553,6 @@ async def test_fetch_PC_to_R_dec2(dut):
     assert safe(dut.pc_mux_sel.value) == 1
     assert safe(dut.inc.value) == 1
     cocotb.log.info("Decoder 2 — Fetch PC → R case passed")
-
 
 
 @cocotb.test()
@@ -394,6 +640,126 @@ async def test_default_dec2(dut):
     assert safe(dut.b_mux_sel.value) == 2
 
     cocotb.log.info("Decoder 2 — DEFAULT case passed")
+
+@cocotb.test()
+async def test_invalid_id_0_dec2(dut):
+    dut.id.value = 0
+    dut.instr_in.value = 0b01000  # valid decoder-2 opcode
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_1_dec2(dut):
+    dut.id.value = 1
+    dut.instr_in.value = 0b01000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_3_dec2(dut):
+    dut.id.value = 3
+    dut.instr_in.value = 0b01000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_4_dec2(dut):
+    dut.id.value = 4
+    dut.instr_in.value = 0b01000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_5_dec2(dut):
+    dut.id.value = 5
+    dut.instr_in.value = 0b01000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_6_dec2(dut):
+    dut.id.value = 6
+    dut.instr_in.value = 0b01000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_7_dec2(dut):
+    dut.id.value = 7
+    dut.instr_in.value = 0b01000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
 
 # ===============================================================
 #  INSTRUCTION DECODER 3 — DIRECTED TESTCASES
@@ -519,6 +885,125 @@ async def test_default_dec3(dut):
     assert safe(dut.a_mux_sel.value) == 2
     assert safe(dut.b_mux_sel.value) == 2
     cocotb.log.info("Decoder 3 — DEFAULT case passed")
+
+@cocotb.test()
+async def test_invalid_id_0_dec3(dut):
+    dut.id.value = 0
+    dut.instr_in.value = 0b01100  # valid decoder-3 opcode
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_1_dec3(dut):
+    dut.id.value = 1
+    dut.instr_in.value = 0b01100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_2_dec3(dut):
+    dut.id.value = 2
+    dut.instr_in.value = 0b01100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_4_dec3(dut):
+    dut.id.value = 4
+    dut.instr_in.value = 0b01100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_5_dec3(dut):
+    dut.id.value = 5
+    dut.instr_in.value = 0b01100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_6_dec3(dut):
+    dut.id.value = 6
+    dut.instr_in.value = 0b01100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_7_dec3(dut):
+    dut.id.value = 7
+    dut.instr_in.value = 0b01100
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
 
 
 # ===============================================================
@@ -650,6 +1135,127 @@ async def test_default_dec4(dut):
     assert safe(dut.b_mux_sel.value) == 2
 
     cocotb.log.info("Decoder 4 — DEFAULT case passed")
+
+@cocotb.test()
+async def test_invalid_id_0_dec4(dut):
+    dut.id.value = 0
+    dut.instr_in.value = 0b10000  # valid decoder-4 opcode (Jump R)
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_1_dec4(dut):
+    dut.id.value = 1
+    dut.instr_in.value = 0b10000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_2_dec4(dut):
+    dut.id.value = 2
+    dut.instr_in.value = 0b10000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_3_dec4(dut):
+    dut.id.value = 3
+    dut.instr_in.value = 0b10000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_5_dec4(dut):
+    dut.id.value = 5
+    dut.instr_in.value = 0b10000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_6_dec4(dut):
+    dut.id.value = 6
+    dut.instr_in.value = 0b10000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_7_dec4(dut):
+    dut.id.value = 7
+    dut.instr_in.value = 0b10000
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+
 
 # ===============================================================
 #  INSTRUCTION DECODER 5 — DIRECTED TESTCASES
@@ -784,6 +1390,126 @@ async def test_default_dec5(dut):
     assert safe(dut.b_mux_sel.value) == 2
 
     cocotb.log.info("Decoder 5 — DEFAULT case passed")
+
+@cocotb.test()
+async def test_invalid_id_0_dec5(dut):
+    dut.id.value = 0
+    dut.instr_in.value = 0b10011  # valid decoder-5 opcode (Jump R + D)
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_1_dec5(dut):
+    dut.id.value = 1
+    dut.instr_in.value = 0b10011
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_2_dec5(dut):
+    dut.id.value = 2
+    dut.instr_in.value = 0b10011
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_3_dec5(dut):
+    dut.id.value = 3
+    dut.instr_in.value = 0b10011
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_4_dec5(dut):
+    dut.id.value = 4
+    dut.instr_in.value = 0b10011
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_6_dec5(dut):
+    dut.id.value = 6
+    dut.instr_in.value = 0b10011
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_7_dec5(dut):
+    dut.id.value = 7
+    dut.instr_in.value = 0b10011
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
 
 # ===============================================================
 #  INSTRUCTION DECODER 6 — DIRECTED TESTCASES
@@ -940,6 +1666,125 @@ async def test_default_dec6(dut):
     assert safe(dut.b_mux_sel.value) == 2
 
     cocotb.log.info("Decoder 6 — DEFAULT case passed")
+    
+@cocotb.test()
+async def test_invalid_id_0_dec6(dut):
+    dut.id.value = 0
+    dut.instr_in.value = 0b10110  # valid decoder-6 opcode (JSB R)
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_1_dec6(dut):
+    dut.id.value = 1
+    dut.instr_in.value = 0b10110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_2_dec6(dut):
+    dut.id.value = 2
+    dut.instr_in.value = 0b10110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_3_dec6(dut):
+    dut.id.value = 3
+    dut.instr_in.value = 0b10110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_4_dec6(dut):
+    dut.id.value = 4
+    dut.instr_in.value = 0b10110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_5_dec6(dut):
+    dut.id.value = 5
+    dut.instr_in.value = 0b10110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_7_dec6(dut):
+    dut.id.value = 7
+    dut.instr_in.value = 0b10110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
 
 
 # ===============================================================
@@ -1097,6 +1942,125 @@ async def test_default_dec7(dut):
     assert safe(dut.b_mux_sel.value) == 2
 
     cocotb.log.info("Decoder 7 — DEFAULT case passed")
+
+@cocotb.test()
+async def test_invalid_id_0_dec7(dut):
+    dut.id.value = 0
+    dut.instr_in.value = 0b11110  # valid decoder-7 opcode (HOLD)
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_1_dec7(dut):
+    dut.id.value = 1
+    dut.instr_in.value = 0b11110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_2_dec7(dut):
+    dut.id.value = 2
+    dut.instr_in.value = 0b11110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_3_dec7(dut):
+    dut.id.value = 3
+    dut.instr_in.value = 0b11110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_4_dec7(dut):
+    dut.id.value = 4
+    dut.instr_in.value = 0b11110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_5_dec7(dut):
+    dut.id.value = 5
+    dut.instr_in.value = 0b11110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
+
+@cocotb.test()
+async def test_invalid_id_6_dec7(dut):
+    dut.id.value = 6
+    dut.instr_in.value = 0b11110
+    dut.cc_in.value = 0
+    dut.instr_en.value = 0
+
+    await Timer(1, "ns")
+
+    expect(dut, dict(
+        rst=0, out_ce=0, rsel=0, rce=0, cen=0,
+        stack_re=0, pop=0,
+        a_mux_sel=2, b_mux_sel=2,
+        oen=0, pc_mux_sel=0, inc=0, src_sel=0,
+        push=0, stack_we=0
+    ))
 
 def test_instruction_decoder_hidden_runner():
     sim = os.getenv("SIM", "icarus")
